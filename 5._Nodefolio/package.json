@@ -1,0 +1,37 @@
+{
+  "name": "nodefolio",
+  "version": "0.0.1",
+  "description": "A personal portfolio made in Node.js",
+  "type": "module",
+  "main": "app.js",
+  "scripts": {
+    "start-dev": "cross-env NODE_ENV=DEV PORT=8080 nodemon app.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/RasmusBerg155/NodeJSRMB.git"
+  },
+  "keywords": [
+    "portefolio",
+    "Node.js",
+    "HTML"
+  ],
+  "author": "Rasmus M. Berg",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/RasmusBerg155/NodeJSRMB/issues"
+  },
+  "homepage": "https://github.com/RasmusBerg155/NodeJSRMB/tree/main#readme",
+  "dependencies": {
+    "bcrypt": "^5.0.1",
+    "cross-env": "^7.0.3",
+    "escape-html": "^1.0.3",
+    "express": "^4.17.1",
+    "express-session": "^1.17.2",
+    "nodemon": "^2.0.15",
+    "sqlite": "^4.0.23",
+    "sqlite3": "^5.0.2",
+    "toastr": "^2.1.4"
+  }
+}

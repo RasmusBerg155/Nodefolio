@@ -1,0 +1,19 @@
+<section class="home" id="home">
+    <div class="max-width">
+      <div class="home-content">
+        <div class="cv-wrapper">
+            <iframe id="frameContainer" src="./assets/CV.pdf" class="cv-viewer"></iframe>
+        </div>
+      </div>
+    </div>
+  </section>
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<script>
+$(function() {
+    var widthRatio = $('#frameContainer').width() / $(window).width();
+    $(window).resize(function() {
+        $('#frameContainer').css({width: $(window).width() * widthRatio});
+    }); 
+});
+</script>
