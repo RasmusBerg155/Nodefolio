@@ -17,23 +17,6 @@ app.use(projectRouter);
 app.use(adminRouter);
 app.use(contactRouter);
 
-// const { createPage } = require("../render.js");
-// const { urlencoded } = require("express");
-
-// const frontpagePage = createPage("frontpage/frontpage.html", { 
-//     title: "Nodefolio | Welcome"
-// });
-
-// const projectsPage = createPage("projects/projects.html");
-
-// app.get("/", (req, res) => {
-//     res.send(frontpagePage);
-// });
-
-// app.get("/projects", (req, res) => {
-//     res.send(projectsPage);
-// });
-
 const PORT = process.env.PORT || 8080;
 
 const server = app.listen(PORT, (error) => {

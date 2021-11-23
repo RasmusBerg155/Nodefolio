@@ -1,14 +1,14 @@
-import express from "express"
-const router = express.Router()
+import express from "express";
+const router = express.Router();
 
 import { connectSqlite } from "../database/connectSqlite.js";
 
 router.get("/api/projects", async (req, res) => {
     const dbConnection = await connectSqlite()
 
-    const projects = await dbConnection.all("SELECT * FROM projects")
+    const projects = await dbConnection.all("SELECT * FROM projects");
 
-    res.send(projects)   
+    res.send(projects);   
 });
 
 router.post("/api/projects", async (req, res) => {
@@ -28,7 +28,7 @@ router.post("/api/projects", async (req, res) => {
     }).catch(() => {
         res.sendStatus(400)
     })
-})
+});
 
 router.delete("/api/projects/:projectId", async (req, res) => {
     const IDofProjectToDelete = req.params.projectId
@@ -44,7 +44,7 @@ router.delete("/api/projects/:projectId", async (req, res) => {
     }).catch(() => {
         res.sendStatus(404)
     })
-})
+});
 
 router.put("/api/projects/", async (req, res) => {
     const project = req.body
@@ -66,7 +66,7 @@ router.put("/api/projects/", async (req, res) => {
     }).catch(() => {
         res.sendStatus(404)
     })
-})
+});
 
-export default router
+export default router;
 

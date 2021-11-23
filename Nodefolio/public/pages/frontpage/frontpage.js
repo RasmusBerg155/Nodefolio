@@ -62,7 +62,6 @@ $(document).ready(function(){
  });
 
  function sendMessage() {
-    // Catch this POST via contact router
     fetch("/contact/", {
         method: "POST",
         headers: { "Content-Type": "application/json; charset=UTF-8" },
@@ -74,6 +73,7 @@ $(document).ready(function(){
         })
     }).then(res => {
         if (res.status == 200) {
+            // doesnt work at the moment, goes straight to frontpage for some reason
             toastr.success("Thank you for you email!")
             setTimeout(() => location.href= "/", 3000);
         }
