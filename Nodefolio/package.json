@@ -10,7 +10,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/RasmusBerg155/NodeJSRMB.git"
+    "url": "git+https://github.com/RasmusBerg155/Nodefolio.git"
   },
   "keywords": [
     "portefolio",
@@ -20,7 +20,7 @@
   "author": "Rasmus M. Berg",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/RasmusBerg155/NodeJSRMB/issues"
+    "url": "https://github.com/RasmusBerg155/issues"
   },
   "homepage": "https://github.com/RasmusBerg155/NodeJSRMB/tree/main#readme",
   "dependencies": {
