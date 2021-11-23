@@ -22,13 +22,14 @@
   "bugs": {
     "url": "https://github.com/RasmusBerg155/issues"
   },
-  "homepage": "https://github.com/RasmusBerg155/NodeJSRMB/tree/main#readme",
+  "homepage": "https://github.com/RasmusBerg155/Nodefolio/tree/main#readme",
   "dependencies": {
     "bcrypt": "^5.0.1",
     "cross-env": "^7.0.3",
     "escape-html": "^1.0.3",
     "express": "^4.17.1",
     "express-session": "^1.17.2",
+    "nodemailer": "^6.7.1",
     "nodemon": "^2.0.15",
     "sqlite": "^4.0.23",
     "sqlite3": "^5.0.2",

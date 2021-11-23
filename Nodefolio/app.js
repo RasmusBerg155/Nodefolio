@@ -8,12 +8,14 @@ app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 
 import pagesRouter from './routers/pages.js'
-import dataRouter from './routers/projects.js'
+import projectRouter from './routers/projects.js'
 import adminRouter from './routers/admin.js'
+import contactRouter from './routers/contact.js'
 
 app.use(pagesRouter);
-app.use(dataRouter);
+app.use(projectRouter);
 app.use(adminRouter);
+app.use(contactRouter);
 
 // const { createPage } = require("../render.js");
 // const { urlencoded } = require("express");

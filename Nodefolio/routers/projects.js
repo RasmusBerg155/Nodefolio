@@ -1,12 +1,6 @@
 import express from "express"
 const router = express.Router()
 
-const mockProjects = [
-    { name: "Node.js Recap", category: "Node.js", technologies: ["Node.js", "Html", "CSS"] },
-    { name: "Nodefolio", category: "Node.js", technologies: ["Node.js", "Html", "CSS"] },
-    { name: "Adventure XP", category: "Java", technologies: ["Java", "Thymeleaf", "CSS", "MySQL"] }
-];
-
 import { connectSqlite } from "../database/connectSqlite.js";
 
 router.get("/api/projects", async (req, res) => {
@@ -32,7 +26,6 @@ router.post("/api/projects", async (req, res) => {
     ).then(() => {
         res.sendStatus(200)
     }).catch(() => {
-        // TODO customize response to assist in proper formatting
         res.sendStatus(400)
     })
 })
@@ -49,7 +42,6 @@ router.delete("/api/projects/:projectId", async (req, res) => {
     ).then(() => {
         res.sendStatus(200)
     }).catch(() => {
-        // TODO customize response to assist in proper formatting
         res.sendStatus(404)
     })
 })
@@ -72,15 +64,9 @@ router.put("/api/projects/", async (req, res) => {
     ).then(() => {
         res.sendStatus(200)
     }).catch(() => {
-        // TODO customize response to assist in proper formatting
         res.sendStatus(404)
     })
-    
 })
-
-router.get("/api/mock", (req, res) => {
-    res.send( mockProjects )
-});
 
 export default router
 

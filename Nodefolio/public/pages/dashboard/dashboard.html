@@ -3,25 +3,33 @@
     <div class="max-width">
       <div class="project-content">
         <h1>Dashboard</h1>
+        <br>
+        <br>
         <hr>
         <h2>Create Project</h2>
+        <br>
         <div class="dashboard-wrapper">
             <div class="row">
-                <input class="form-element" id="title" type="text" placeholder="Project title..." value="Name" required>
-                <input class="form-element" id="category" type="text" placeholder="Category..." value="Cathegories" required>
+                <input size=50 id="title" type="text" value="Name" required>
+                <input size=50 id="category" type="text" value="Cathegories" required>
             </div>
             <div class="row">
-                <input size=50 class="form-element" id="technologies" type="text" placeholder="Relevant technologies..." value="Technologies" required>
-                <input size=50 class="form-element" id="links" type="text" placeholder="Links..." value="Links" required>
+                <input size=50 id="technologies" type="text" value="Technologies" required>
+                <input size=50 id="links" type="text" value="Links" required>
             </div>
+            <br>
+            <br>
             <div>
-                <button class="form-element button" id="create-project">Create Project</button>
+                <button class="button" id="create-project">Create Project</button>
             </div>
+            <br>
+            <br>
         </div>
         <hr>
 
-<!-- Populate with projects via API -->
-        <h2>Update / Delete Projects</h2>
+        <h2>Update & Delete Projects</h2>
+        <br>
+        <br>
 
         <table id="projects-wrapper" class="dashboard-wrapper">
             <tr>
@@ -33,10 +41,11 @@
             <th>Delete</th>
             <th>Update</th>
             </tr>
-            <!-- Create TR, TDs and append to table -->
         </table>
+        <br>
+        <br>
         <div>
-            <a href="/admin/logout"><button class="form-element button">Logout</button></a>
+            <a href="/admin/logout"><button class="button">Logout</button></a>
         </div>
       </div>
     </div>

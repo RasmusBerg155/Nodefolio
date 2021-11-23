@@ -9,7 +9,8 @@ fetch("/api/projects")
             <h3>${escapeHTML(project.title)}</h3>
             <p>Category:  ${escapeHTML(project.category)}</p>
             <p>Technologies:  ${escapeHTML(project.technologies)}</p>
-            <p>Link:<a href="https://${project.links}">GitHub</p>
+            <p>Link:<a href="${project.links}">GitHub</p>
+            <br>
         `;
         
         projectsWrapperDiv.appendChild(projectDiv);

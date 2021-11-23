@@ -11,26 +11,24 @@ fetch("/api/projects")
         row.insertCell(3).innerHTML = `<input id="technologies" type="text" placeholder="Technologies..." value="${escapeHTML(project.technologies)}" required></td>`
         row.insertCell(4).innerHTML = `<input id="links" type="text" placeholder="Links..." value="${escapeHTML(project.links)}" required></td>`
         row.insertCell(5).innerHTML = `
-            <button id="delete" class="fas-btn" style="background-color: #20202000">
+            <button id="delete" class="fa-btn" style="background-color: #20202000">
             <i class="fas fa-trash-alt">
             </i></button>
         `
         row.insertCell(6).innerHTML = `
-            <button id="update" class="fas-btn" style="background-color: #20202000">
+            <button id="update" class="fa-btn" style="background-color: #20202000">
             <i class="fas fa-save"></i>
             </i></button>
-        `
-
-        
+        `        
 
         row.cells[5].onclick = function() {
             const projectId = row.cells[0].innerHTML
             deleteProject(projectId, row.rowIndex)
-        }
+        };
 
         row.cells[6].onclick = function() {
             updateProject(row)
-        }
+        };
         
     });
 });
@@ -53,7 +51,7 @@ function createProject() {
         else {
             console.log("Error:", res.status)
         }
-    }) 
+    });
 }
 
 function deleteProject(projectId, rowToDeleteIndex) {
@@ -61,14 +59,14 @@ function deleteProject(projectId, rowToDeleteIndex) {
         method: "DELETE"
     }).then(res => {
         if (res.status == 200) {
-            const tableRows = document.getElementsByTagName("tr")
-            const rowToDelete = Array.from(tableRows).find(row => row.rowIndex == rowToDeleteIndex)
-            rowToDelete.remove()
-            toastr.success(`Project with ID: ${projectId} deleted successfully.`)
+            const tableRows = document.getElementsByTagName("tr");
+            const rowToDelete = Array.from(tableRows).find(row => row.rowIndex == rowToDeleteIndex);
+            rowToDelete.remove();
+            toastr.success(`Project with ID: ${projectId} deleted successfully.`);
         } else {
-            toastr.error("Unable to delete project.")
+            toastr.error("Unable to delete project.");
         }
-    })
+    });
     
 }
 
@@ -91,20 +89,10 @@ function updateProject(rowToUpdate) {
         } else {
             toastr.error("Unable to update project.")
         }
-    })
+    });
 }
 
-
-/*
-<td>${escapeHTML(project.id)}</td>
-<td>${escapeHTML(project.title)}</td>
-<td>${escapeHTML(project.category)}</td>
-<td>${escapeHTML(project.technologies)}</td>
-<td>${escapeHTML(project.links)}</td>
-            */
-
-// <p>Links: ${escapeHTML(project.links.join(", "))}p>
 document.addEventListener("DOMContentLoaded", (event) => {
-    document.getElementById("create-project").addEventListener("click", createProject)
-})
+    document.getElementById("create-project").addEventListener("click", createProject);
+});
 

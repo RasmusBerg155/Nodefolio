@@ -37,13 +37,6 @@ $(document).ready(function(){
         backSpeed: 60,
         loop: true
     });
-
-     // Work in progress counter, missing dependencies
-    /* $('.counter').counterUp({
-         delay: 10,
-         time: 1000
-     }); */
- 
  
      // owl carousel script
     $('.carousel').owlCarousel({
@@ -68,6 +61,26 @@ $(document).ready(function(){
     });
  });
 
-// const copyrightElement = document.getElementById("copyright-year")
+ function sendMessage() {
+    // Catch this POST via contact router
+    fetch("/contact/", {
+        method: "POST",
+        headers: { "Content-Type": "application/json; charset=UTF-8" },
+        body: JSON.stringify({
+            name: document.getElementById("name").value,
+            email: document.getElementById("email").value,
+            phone: document.getElementById("phone").value,
+            message: document.getElementById("message").value
+        })
+    }).then(res => {
+        if (res.status == 200) {
+            toastr.success("Thank you for you email!")
+            setTimeout(() => location.href= "/", 3000);
+        }
+        else {
+            console.log("Error:", res.status)
+        }
+    }) 
+}
 
-// copyrightElement.innerText = `© ${new Date().getFullYear()}`
+document.getElementById("contact-button").addEventListener("click", sendMessage)
