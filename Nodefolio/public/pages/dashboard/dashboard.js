@@ -4,30 +4,23 @@ fetch("/api/projects")
     const projectsTable = document.getElementById("projects-wrapper");
 
     projects.map((project, index) => { 
-        var row = projectsTable.insertRow(index + 1)
-        row.insertCell(0).innerHTML = project.id
-        row.insertCell(1).innerHTML = `<input id="title" type="text" placeholder="Title..." value="${escapeHTML(project.title)}" required></td>`
-        row.insertCell(2).innerHTML = `<input id="category" type="text" placeholder="Category..." value="${escapeHTML(project.category)}" required></td>`
-        row.insertCell(3).innerHTML = `<input id="technologies" type="text" placeholder="Technologies..." value="${escapeHTML(project.technologies)}" required></td>`
-        row.insertCell(4).innerHTML = `<input id="links" type="text" placeholder="Links..." value="${escapeHTML(project.links)}" required></td>`
-        row.insertCell(5).innerHTML = `
-            <button id="delete" class="fa-btn" style="background-color: #20202000">
-            <i class="fas fa-trash-alt">
-            </i></button>
-        `
-        row.insertCell(6).innerHTML = `
-            <button id="update" class="fa-btn" style="background-color: #20202000">
-            <i class="fas fa-save"></i>
-            </i></button>
-        `        
+        var row = projectsTable.insertRow(index + 1);
+        row.insertCell(0).innerHTML = project.id;
+        row.insertCell(1).innerHTML = `<input id="title" type="text" value="${escapeHTML(project.title)}" required></td>`;
+        row.insertCell(2).innerHTML = `<input id="category" type="text" value="${escapeHTML(project.category)}" required></td>`;
+        row.insertCell(3).innerHTML = `<input id="technologies" type="text" value="${escapeHTML(project.technologies)}" required></td>`;
+        row.insertCell(4).innerHTML = `<input id="links" type="text" value="${escapeHTML(project.links)}" required></td>`;
+        // buttons missing styling, but functioning
+        row.insertCell(5).innerHTML = `<button id="delete"></button>`;
+        row.insertCell(6).innerHTML = `<button id="update"></button>`;      
 
         row.cells[5].onclick = function() {
             const projectId = row.cells[0].innerHTML
-            deleteProject(projectId, row.rowIndex)
+            deleteProject(projectId, row.rowIndex);
         };
 
         row.cells[6].onclick = function() {
-            updateProject(row)
+            updateProject(row);
         };
         
     });
@@ -49,10 +42,10 @@ function createProject() {
             setTimeout(() => location.href= "/dshbrd", 1500);
         }
         else {
-            console.log("Error:", res.status)
+            console.log("Error:", res.status);
         }
     });
-}
+};
 
 function deleteProject(projectId, rowToDeleteIndex) {
     fetch("/api/projects/" + projectId, {
@@ -77,7 +70,7 @@ function updateProject(rowToUpdate) {
         category: rowToUpdate.cells[2].children[0].value,
         technologies: rowToUpdate.cells[3].children[0].value,
         links: rowToUpdate.cells[4].children[0].value
-    }
+    };
 
     fetch("/api/projects", {
         method: "PUT",
@@ -88,7 +81,7 @@ function updateProject(rowToUpdate) {
             toastr.success(`Project with ID: ${project.id} updated!`)
         } else {
             toastr.error("Unable to update project.")
-        }
+        };
     });
 }
 

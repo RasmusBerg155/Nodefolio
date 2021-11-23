@@ -7,13 +7,13 @@ function login() {
         })
     }).then(res => {
         if (res.status == 200) {
-            toastr.success("Logging in...")
+            toastr.success("Logging in...");
             setTimeout(() => location.href= "/dshbrd", 1500);
         }
         else {
-            toastr.info("Couldn't login - Check password and try again.'")
-        }
-        })
-}
+            toastr.info("Wrong password")
+        };
+        });
+};
 
-document.getElementById("login-button").addEventListener("click", login)
+document.getElementById("login-button").addEventListener("click", login);

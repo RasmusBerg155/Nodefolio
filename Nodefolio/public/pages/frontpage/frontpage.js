@@ -4,12 +4,12 @@ $(document).ready(function(){
             $('.navbar').addClass("sticky");
         } else {
             $('.navbar').removeClass("sticky");
-        }
+        };
         if(this.scrollY > 500){
             $('.scroll-up-btn').addClass("show");    
         }else{
             $('.scroll-up-btn').removeClass("show");  
-        }
+        };
     });
 
     // slide-up script
@@ -73,14 +73,14 @@ $(document).ready(function(){
         })
     }).then(res => {
         if (res.status == 200) {
-            // doesnt work at the moment, goes straight to frontpage for some reason
-            toastr.success("Thank you for you email!")
+            // doesnt work at the moment, goes straight to frontpage without delay or message for some reason
+            toastr.success("Thank you for you email!");
             setTimeout(() => location.href= "/", 3000);
         }
         else {
-            console.log("Error:", res.status)
+            console.log("Error:", res.status);
         }
-    }) 
-}
+    });
+};
 
-document.getElementById("contact-button").addEventListener("click", sendMessage)
+document.getElementById("contact-button").addEventListener("click", sendMessage);

@@ -605,17 +605,6 @@ footer span a:hover{
     box-shadow: 0.0rem 0.0rem 1rem white;
 }
 
-.fas-btn {
-    background-color: #20202000;
-    font-size: large;
-    color: white;
-    border: none;
-}
-
-.fas-btn:hover {
-    color:rgb(99, 98, 98)
-}
-
 /* *** Admin Styling *** */
 
 

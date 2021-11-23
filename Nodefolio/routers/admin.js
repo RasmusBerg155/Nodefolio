@@ -4,12 +4,11 @@ import { connectSqlite } from "../database/connectSqlite.js";
 const router = express.Router();
 
 router.post("/admin/login", async (req, res) => {
-    const db = await connectSqlite()
+    const db = await connectSqlite();
     
-    const hashInfo = await db.all(`
-        SELECT hash FROM secrets WHERE id = 1
-        `,
-    )
+    const hashInfo = await db.all(
+        `SELECT hash FROM secrets WHERE id = 1`,
+    );
 
     const hash = hashInfo.map(hash => hash.hash)
 
@@ -18,18 +17,17 @@ router.post("/admin/login", async (req, res) => {
             req.session.loggedIn = true;
             res.sendStatus(200);
         } else {
-            res.sendStatus(400)
+            res.sendStatus(400);
         }
     });        
-})
+});
 
 router.get("/admin/logout", (req, res) => {
     req.session.loggedIn = false;
-    res.redirect("/")
-})
+    res.redirect("/");
+});
 
 export async function checkLogin (pass) {
+};
 
-}
-
-export default router
+export default router;
